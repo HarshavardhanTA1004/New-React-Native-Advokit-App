@@ -42,7 +42,7 @@ export default class HomeScreen extends React.Component {
           vertical
           showsVerticalScrollIndicator={false}
           numColumns={2}
-          data={recipes}
+          data={lists}
           renderItem={this.renderRecipes}
           keyExtractor={item => `${item.recipeId}`}
         />

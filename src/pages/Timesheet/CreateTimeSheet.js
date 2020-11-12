@@ -11,7 +11,7 @@ import Selector from 'react-native-easy-select';
 import {dropDownConstants} from '../../Constants/Constants';
 // import { emailValidator, passwordValidator } from '../../core/utils';
 
-const CreateTimeSheetScreen = ({ navigation }) => { 
+const CreateTimeSheet = ({ navigation }) => { 
   const [hours, setHours] = useState({ value: ''});
   const [cases, setCases] = useState({ value: ''});
   const [description, setDescription] = useState({ value: ''});
@@ -82,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo(CreateTimeSheetScreen);
+export default memo(CreateTimeSheet);
