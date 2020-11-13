@@ -4,7 +4,7 @@ export const lists = [
     listId: 122,
     categoryId: 3,
     title: 'Cases',
-    create: 'CreateCost',
+    create: 'CreateCase',
     
    },
   {
@@ -38,7 +38,7 @@ export const lists = [
     listId: 4,
     categoryId: 1,
     title: 'Attachments',
-    create: 'CreateCost',
+    create: 'CreateAttachment',
   },
   {
     listId: 5,

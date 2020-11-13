@@ -10,6 +10,9 @@ import CreateTask from '../screens/Task/CreateTask';
 import CreateTrademark from '../screens/Trademark/CreateTrademark';
 import CreateNotes from '../screens/ShortNotes/CreateNotes';
 import CreateTimesheet from '../screens/Timesheet/CreateTimesheet';
+import CreateCase from '../screens/Case/CreateAttachment';
+import CreateAttachment from '../screens/Attachment/CreateAttachment';
+
 
 
 const MainNavigator = createStackNavigator(
@@ -21,8 +24,8 @@ const MainNavigator = createStackNavigator(
     CreateTrademark: CreateTrademark,
     CreateNotes: CreateNotes,
     CreateTimesheet: CreateTimesheet,
-
-    
+    CreateCase: CreateCase,
+    CreateAttachment: CreateAttachment,    
   },
   {
     initialRouteName: 'Login',

@@ -5,7 +5,6 @@ import {
   Text,
   View,
   CheckBox,
-  ScrollView,
 } from "react-native";
 import Background from "../../components/Background";
 
@@ -16,11 +15,13 @@ import BackButton from "../../components/BackButton";
 import { theme } from "../../core/theme";
 import Selector from "react-native-easy-select";
 import { dropDownConstants } from "../../Constants/Constants";
+import { ScrollView } from "react-native-gesture-handler";
 // import { emailValidator, passwordValidator } from '../../core/utils';
 
-const CreateNotesScreen = ({ navigation }) => {
+const CreateAttachment = ({ navigation }) => {
   const [cases, setCases] = useState({ value: "" });
-  const [content, setContent] = useState({ value: "" });
+  const [description, setDescription] = useState({ value: "" });
+
   const [isSelected, setSelection] = useState(true);
 
   const _onCreatePressed = () => {
@@ -33,15 +34,19 @@ const CreateNotesScreen = ({ navigation }) => {
 
   return (
     <Background>
-      <Header>Add ShortNotes</Header>
+      <Header>Add Attachment</Header>
       <ScrollView>
-        <TextInput
-          label="Type Content"
-          returnKeyType="done"
-          value={content.value}
-          onChangeText={(text) => setContent({ value: text })}
-        />
+        <Button mode="contained" onPress={}>
+          SELECT IMAGE FILE
+        </Button>
+        <Text>File size should be less than 10 MB</Text>
 
+        <TextInput
+          label="Description*"
+          returnKeyType="done"
+          value={description.value}
+          onChangeText={(text) => setDescription({ value: text })}
+        />
         <Selector
           theme="dropdown" // Default: 'simple'
           items={dropDownConstants.cases}
@@ -49,7 +54,7 @@ const CreateNotesScreen = ({ navigation }) => {
           valueKey="value" // Default: 'value'
           labelKey="text" // Default: 'label'
           defaultValue={cases} // Set default value
-          placeholder="Select a cases*" // Placeholder for dropdown UI
+          placeholder="Select a case" // Placeholder for dropdown UI
           // Styles
           textOptionStyle={{ color: "black" }}
           placeholderContainerStyle={{ paddingVertical: 20 }}
@@ -58,6 +63,7 @@ const CreateNotesScreen = ({ navigation }) => {
           iconStyle={{ tintColor: "black" }}
           loadingStyle={{ marginBottom: 10 }}
         />
+
         <View style={styles.checkboxContainer}>
           <CheckBox
             value={isSelected}
@@ -65,6 +71,15 @@ const CreateNotesScreen = ({ navigation }) => {
             style={styles.checkbox}
           />
           <Text style={styles.label}>Private</Text>
+        </View>
+
+        <View style={styles.checkboxContainer}>
+          <CheckBox
+            value={isSelected}
+            onValueChange={setSelection}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>Overwrite</Text>
         </View>
 
         <Button mode="contained" onPress={_onCreatePressed}>
@@ -80,20 +95,6 @@ const CreateNotesScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  checkboxContainer: {
-    flexDirection: "row",
-    marginBottom: 20,
-  },
-  checkbox: {
-    alignSelf: "center",
-  },
-
   row: {
     flexDirection: "row",
     marginTop: 4,
@@ -107,4 +108,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo(CreateNotes);
+export default memo(CreateAttachment);

@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View, ScrollView } from 'react-native';
 import Background from '../../components/Background';
 
 import Header from '../../components/Header';
@@ -29,7 +29,9 @@ const CreateTimeSheet = ({ navigation }) => {
 
   return (
     <Background>
-      <Header>Add Timesheet</Header>    
+      <Header>Add Timesheet</Header>
+      <ScrollView>     
+         
       <TextInput
       label="Description of work"
       returnKeyType="done"
@@ -63,6 +65,7 @@ const CreateTimeSheet = ({ navigation }) => {
       <Button mode="contained" onPress={_onCancelPressed}>
         Cancel
       </Button>
+      </ScrollView>
 
     </Background>
   );
