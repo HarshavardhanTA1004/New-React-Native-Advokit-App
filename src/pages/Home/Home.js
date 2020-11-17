@@ -5,6 +5,7 @@ import { recipes } from '../../data/dataArrays';
 import MenuImage from '../../components/MenuImage/MenuImage';
 import DrawerActions from 'react-navigation';
 import { getCategoryName } from '../../data/MockDataAPI';
+import Notifications from '../../components/Notifications';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -13,7 +14,10 @@ export default class HomeScreen extends React.Component {
       onPress={() => {
         navigation.openDrawer();
       }}
-    />
+    />,
+    headerRight: () => <Notifications
+      onPress={}
+    />    
   });
 
   constructor(props) {

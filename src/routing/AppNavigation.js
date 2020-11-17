@@ -5,6 +5,8 @@ import {createStackNavigator} from 'react-navigation-stack'
 import Home from '../screens/Home/Home';
 import DrawerContainer from '../screens/DrawerContainer/DrawerContainer';
 import Login from '../screens/Login/Login';
+import SignUp from '../screens/Login/SignUp';
+import ForgotPassword from '../screens/Login/ForgotPassword';
 import CreateCost from '../screens/Cost/CreateCost';
 import CreateTask from '../screens/Task/CreateTask';
 import CreateTrademark from '../screens/Trademark/CreateTrademark';
@@ -18,6 +20,8 @@ import CreateAttachment from '../screens/Attachment/CreateAttachment';
 const MainNavigator = createStackNavigator(
   {
     Login: Login,
+    ForgotPassword: ForgotPassword,
+    SignUp: SignUp,
     Home: Home,
     CreateCost: CreateCost,
     CreateTask: CreateTask,
