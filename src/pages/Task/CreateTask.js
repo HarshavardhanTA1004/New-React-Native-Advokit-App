@@ -5,10 +5,7 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 import Header from "../../components/Header";
 import Button from "../../components/Button";
-import TextInput from "../../components/TextInput";
-import BackButton from "../../components/BackButton";
-import { theme } from "../../core/theme";
-// import { emailValidator, passwordValidator } from '../../core/utils';
+import TextInput from "../../components/TextInput";import { theme } from "../../core/theme";
 
 const CreateTask = ({ navigation }) => {
   const [type, setType] = useState({ value: "" });

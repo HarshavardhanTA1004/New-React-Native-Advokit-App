@@ -1,17 +1,17 @@
-import React, { memo, useState } from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { emailValidator } from '../core/utils';
-import Background from '../components/Background';
-import BackButton from '../components/BackButton';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
-import TextInput from '../components/TextInput';
-import { theme } from '../core/theme';
-import Button from '../components/Button';
+import React, { memo, useState } from "react";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { emailValidator } from "../core/utils";
+import Background from "../components/Background";
+import BackButton from "../components/BackButton";
+import Logo from "../components/Logo";
+import Header from "../components/Header";
+import TextInput from "../components/TextInput";
+import { theme } from "../core/theme";
+import Button from "../components/Button";
 
 const ForgotPassword = ({ navigation }) => {
-  const [account, setAccount] = useState({ value: '', error: '' });  
-  const [email, setEmail] = useState({ value: '', error: '' });
+  const [account, setAccount] = useState({ value: "", error: "" });
+  const [email, setEmail] = useState({ value: "", error: "" });
 
   const _onSendPressed = () => {
     const emailError = emailValidator(email.value);
@@ -21,12 +21,12 @@ const ForgotPassword = ({ navigation }) => {
       return;
     }
 
-    navigation.navigate('Login');
+    navigation.navigate("Login");
   };
 
   return (
     <Background>
-      <BackButton goBack={() => navigation.navigate('Login')} />
+      <BackButton goBack={() => navigation.navigate("Login")} />
 
       <Logo />
 
@@ -45,12 +45,11 @@ const ForgotPassword = ({ navigation }) => {
         keyboardType=""
       />
 
-
       <TextInput
         label="E-mail address"
         returnKeyType="done"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: '' })}
+        onChangeText={(text) => setEmail({ value: text, error: "" })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
@@ -65,7 +64,7 @@ const ForgotPassword = ({ navigation }) => {
 
       <TouchableOpacity
         style={styles.back}
-        onPress={() => navigation.navigate('LoginScreen')}
+        onPress={() => navigation.navigate("LoginScreen")}
       >
         <Text style={styles.label}>← Back to login</Text>
       </TouchableOpacity>
@@ -75,7 +74,7 @@ const ForgotPassword = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   back: {
-    width: '100%',
+    width: "100%",
     marginTop: 12,
   },
   button: {
@@ -83,7 +82,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: theme.colors.secondary,
-    width: '100%',
+    width: "100%",
   },
 });
 

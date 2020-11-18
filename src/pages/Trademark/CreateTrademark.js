@@ -9,7 +9,6 @@ import BackButton from '../../components/BackButton';
 import { theme } from '../../core/theme';
 import Selector from 'react-native-easy-select';
 import {dropDownConstants} from '../../Constants/Constants';
-// import { emailValidator, passwordValidator } from '../../core/utils';
 
 const CreateTrademark = ({ navigation }) => { 
   const [checked, setChecked] = React.useState('irdi');

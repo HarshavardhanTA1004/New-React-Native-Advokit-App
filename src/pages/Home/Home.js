@@ -24,12 +24,12 @@ export default class HomeScreen extends React.Component {
     super(props);
   }
 
-  onPressRecipe = item => {
-    this.props.navigation.navigate('Recipe', { item });
+  onPressList = item => {
+    this.props.navigation.navigate('List', { item });
   };
 
-  renderRecipes = ({ item }) => (
-    <TouchableHighlight underlayColor='rgba(73,182,77,0.9)' onPress={() => this.onPressRecipe(item)}>
+  renderLists = ({ item }) => (
+    <TouchableHighlight underlayColor='rgba(73,182,77,0.9)' onPress={() => this.onPressList(item)}>
       <View style={styles.container}>
         
         <Image style={styles.photo} source={require('../../../assets/icon.png')} />
@@ -47,8 +47,8 @@ export default class HomeScreen extends React.Component {
           showsVerticalScrollIndicator={false}
           numColumns={2}
           data={lists}
-          renderItem={this.renderRecipes}
-          keyExtractor={item => `${item.recipeId}`}
+          renderItem={this.renderLists}
+          keyExtractor={item => `${item.listId}`}
         />
       </View>
     );

@@ -1,24 +1,24 @@
-import React, { memo, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Background from '../components/Background';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
-import Button from '../components/Button';
-import TextInput from '../components/TextInput';
-import BackButton from '../components/BackButton';
-import { theme } from '../core/theme';
+import React, { memo, useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import Background from "../components/Background";
+import Logo from "../components/Logo";
+import Header from "../components/Header";
+import Button from "../components/Button";
+import TextInput from "../components/TextInput";
+import BackButton from "../components/BackButton";
+import { theme } from "../core/theme";
 import {
   emailValidator,
   passwordValidator,
   nameValidator,
-} from '../core/utils';
+} from "../core/utils";
 
 const SignUp = ({ navigation }) => {
-  const [accountname, setAccountname] = useState({ value: '', error: '' });
-  const [username, setUsername] = useState({ value: '', error: '' });
-  const [email, setEmail] = useState({ value: '', error: '' });
-  const [password, setPassword] = useState({ value: '', error: '' });
-  const [contact, setContact] = useState({ value: '', error: '' });
+  const [accountname, setAccountname] = useState({ value: "", error: "" });
+  const [username, setUsername] = useState({ value: "", error: "" });
+  const [email, setEmail] = useState({ value: "", error: "" });
+  const [password, setPassword] = useState({ value: "", error: "" });
+  const [contact, setContact] = useState({ value: "", error: "" });
 
   const _onSignUpPressed = () => {
     const nameError = nameValidator(name.value);
@@ -32,12 +32,12 @@ const SignUp = ({ navigation }) => {
       return;
     }
 
-    navigation.navigate('Home');
+    navigation.navigate("Home");
   };
 
   return (
     <Background>
-      <BackButton goBack={() => navigation.navigate('Login')} />
+      <BackButton goBack={() => navigation.navigate("Login")} />
 
       <Logo />
 
@@ -46,8 +46,8 @@ const SignUp = ({ navigation }) => {
       <TextInput
         label="Account Name"
         returnKeyType="next"
-        value={name.value}
-        onChangeText={text => setName({ value: text, error: '' })}
+        value={accountname.value}
+        onChangeText={(text) => setAccountname({ value: text, error: "" })}
         error={!!name.error}
         errorText={name.error}
       />
@@ -56,7 +56,7 @@ const SignUp = ({ navigation }) => {
         label="Email"
         returnKeyType="next"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: '' })}
+        onChangeText={(text) => setEmail({ value: text, error: "" })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
@@ -69,7 +69,7 @@ const SignUp = ({ navigation }) => {
         label="Password"
         returnKeyType="done"
         value={password.value}
-        onChangeText={text => setPassword({ value: text, error: '' })}
+        onChangeText={(text) => setPassword({ value: text, error: "" })}
         error={!!password.error}
         errorText={password.error}
         secureTextEntry
@@ -79,7 +79,7 @@ const SignUp = ({ navigation }) => {
         label="Username"
         returnKeyType="next"
         value={username.value}
-        onChangeText={text => setUsername({ value: text, error: '' })}
+        onChangeText={(text) => setUsername({ value: text, error: "" })}
         error={!!name.error}
         errorText={name.error}
       />
@@ -88,12 +88,10 @@ const SignUp = ({ navigation }) => {
         label="Contact Number"
         returnKeyType="next"
         value={contact.value}
-        onChangeText={text => setContact({ value: text, error: '' })}
+        onChangeText={(text) => setContact({ value: text, error: "" })}
         error={}
         errorText={}
       />
-
-
 
       <Button mode="contained" onPress={_onSignUpPressed} style={styles.button}>
         Sign Up
@@ -101,7 +99,7 @@ const SignUp = ({ navigation }) => {
 
       <View style={styles.row}>
         <Text style={styles.label}>Already have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+        <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
           <Text style={styles.link}>Login</Text>
         </TouchableOpacity>
       </View>
@@ -117,11 +115,11 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 4,
   },
   link: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: theme.colors.primary,
   },
 });

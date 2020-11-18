@@ -1,6 +1,5 @@
 import React, { memo, useState } from "react";
 import {
-  TouchableOpacity,
   StyleSheet,
   Text,
   View,
@@ -11,12 +10,12 @@ import Background from "../../components/Background";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import TextInput from "../../components/TextInput";
-import BackButton from "../../components/BackButton";
+
 import { theme } from "../../core/theme";
 import Selector from "react-native-easy-select";
 import { dropDownConstants } from "../../Constants/Constants";
 import { ScrollView } from "react-native-gesture-handler";
-// import { emailValidator, passwordValidator } from '../../core/utils';
+
 
 const CreateAttachment = ({ navigation }) => {
   const [cases, setCases] = useState({ value: "" });
